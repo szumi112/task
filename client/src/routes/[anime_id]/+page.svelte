@@ -12,7 +12,9 @@
     image={data.anime.images.webp.image_url}
 />
 
-<p>{data.anime.synopsis}</p>
+<p class="mb-4 text-gray-300">
+    {data.anime.synopsis}
+</p>
 
 <form action="?/addToFavorites" method="post" use:enhance>
     <input type="hidden" name="mal_id" value={data.anime.mal_id} />
@@ -22,11 +24,18 @@
         name="image"
         value={data.anime.images.webp.image_url}
     />
-    <button class="bg-gray-300 rounded p-4 mt-4" type="submit">
+    <button
+        class="mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white transition-colors duration-300 hover:bg-blue-600"
+    >
         Add to favorites
     </button>
 </form>
 
-<div class="mt-10">
-    <a class="bg-gray-300 rounded p-4" href="/">Go back to list</a>
+<div class="my-10">
+    <a
+        class="rounded bg-gray-600 px-4 py-2 font-bold text-white transition-colors duration-300 hover:bg-gray-700"
+        href="/"
+    >
+        Go back to list
+    </a>
 </div>

@@ -21,9 +21,7 @@ export type Anime = {
 
 export const load = (async ({ params }) => {
     const id = params.anime_id;
-    const anime = await api<Anime>(
-        `https://api.jikan.moe/v4/anime/${id}`,
-    );
+    const anime = await api<Anime>(`https://api.jikan.moe/v4/anime/${id}`);
     if (!anime.success) {
         console.error("Failed to fetch anime", anime.error);
         throw error(500, "Failed to fetch anime");
